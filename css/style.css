@@ -1,0 +1,149 @@
+/* 基础重置 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: #ffffff; /* 纯白背景 */
+    color: #333;
+}
+
+/* 顶部渐变区：不与下方重叠 */
+.hero-header {
+    background: linear-gradient(135deg, #2b5876 0%, #4e4376 100%); /* 深蓝紫色渐变 */
+    padding: 80px 20px;
+    color: white;
+    text-align: center;
+}
+
+.hero-header h1 {
+    font-size: 2.8rem;
+    margin: 0;
+    font-weight: 800;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    margin-top: 15px;
+    opacity: 0.85;
+}
+
+/* 内容区域布局 */
+.main-content {
+    max-width: 1200px;
+    margin: 40px auto; /* 与顶部背景保持间距 */
+    padding: 0 20px;
+}
+
+/* 醒目的标题设计 */
+.section-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-top: 60px;
+    margin-bottom: 25px;
+    color: #1a1a1a;
+    border-bottom: 3px solid #333; /* 底部粗线条增加醒目度 */
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.text-body {
+    font-size: 1.3rem;
+    line-height: 1.7;
+    color: #444;
+}
+
+/* 图片居中，去掉外框 */
+.image-center {
+    text-align: center;
+    margin: 30px 0;
+}
+.image-center img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 音频表格样式：去掉外围边框，仅保留行间分割线 */
+.audio-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 30px;
+}
+
+.audio-table th {
+    text-align: left;
+    padding: 15px 10px;
+    font-size: 1.1rem;
+    border-bottom: 2px solid #eee;
+    color: #666;
+}
+
+.audio-table td {
+    padding: 25px 10px;
+    border-bottom: 1px solid #f0f0f0; /* 极细线，几乎无痕 */
+}
+
+/* 音频控件宽度 */
+audio {
+    width: 160px;
+}
+
+.sample-label {
+    display: block;
+    font-size: 0.8rem;
+    color: #999;
+    margin-bottom: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 60px 0;
+    color: #bbb;
+    font-size: 0.9rem;
+}
+
+
+/* 解决切断和挤压的核心：滚动包装 */
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto; /* 列太多时允许左右滑动，保护音频控件 UI */
+    margin-top: 20px;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* 强制固定布局 */
+.audio-table-fixed {
+    width: 100%;
+    min-width: 1100px; /* 关键：强制表格总宽度，保证 4 列每列约 225px */
+    table-layout: fixed; 
+    border-collapse: collapse;
+}
+
+.audio-table-fixed th {
+    padding: 15px 5px;
+    border-bottom: 2px solid #eee;
+    color: #666;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.audio-table-fixed td {
+    padding: 15px 5px;
+    text-align: center;
+    border-bottom: 1px solid #f9f9f9;
+    vertical-align: middle;
+}
+
+/* 播放器宽度自适应 */
+audio {
+    width: 100%;        /* 占满单元格并留出微小缝隙 */
+    max-width: 220px;  /* 限制最大宽度防止在大屏上拉伸变形 */
+    height: 35px;
+    display: block;
+    margin: 0 auto;
+    transform: scale(0.9); 
+    transform-origin: center;
+}
+
+/* 调整表头比例（总和必须为 100%） */
+.audio-table-fixed th.col-short { width: 20%; }
+.audio-table-fixed th.col-long { width: 20%; }
