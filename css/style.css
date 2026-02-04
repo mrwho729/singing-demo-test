@@ -9,22 +9,26 @@ body {
 
 /* 顶部渐变区：不与下方重叠 */
 .hero-header {
-    background: linear-gradient(135deg, #2b5876 0%, #4e4376 100%); /* 深蓝紫色渐变 */
+    /* 蓝色在45%结束过渡，紫色在55%开始，确保正50%处是完全的混合色 */
+    background: linear-gradient(to right, #335c78 45%, #45387a 55%);
     padding: 80px 20px;
     color: white;
     text-align: center;
 }
 
 .hero-header h1 {
-    font-size: 2.8rem;
+    font-size: 3rem;
     margin: 0;
     font-weight: 800;
+    letter-spacing: -0.5px; /* 紧凑的字间距更显专业 */
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2); /* 增加文字阴影，防止浅色区域文字看不清 */
 }
 
 .subtitle {
     font-size: 1.2rem;
-    margin-top: 15px;
-    opacity: 0.85;
+    margin-top: 18px;
+    opacity: 0.9;
+    font-weight: 300;
 }
 
 /* 内容区域布局 */
