@@ -3,34 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MySVB-DEMO</title>
+    <title>SRF-SVB-DEMO</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <header class="hero-header">
     <div class="header-container">
-        <h1>My Singing Voice <br>Beautifier</h1>
-        <p class="subtitle">[MySVB-DEMO]</p>
+        <h1> SRF-SVB: Style-Consistent Singing Voice Beautifying <br> via Rectified Flow</h1>
+        <p class="subtitle">[SRF-SVB-DEMO]</p>
     </div>
 </header>
 
 <main class="main-content">
     <section>
         <h2 class="section-title">Abstract</h2>
-        <p class="text-body">We are interested in a novel task, singing voice beautifying (SVB). Given the singing voice of an amateur singer, SVB aims to improve the intonation and vocal tone of the voice, while keeping the content and vocal timbre. Current automatic pitch correction techniques are immature, and most of them are restricted to intonation but ignore the overall aesthetic quality. Hence, we introduce Neural Singing Voice Beautifier (NSVB), the first generative model to solve the SVB task, which adopts a conditional variational autoencoder as the backbone and learns the latent representations of vocal tone. In NSVB, we propose a novel time-warping approach for pitch correction: Shape-Aware Dynamic Time Warping (SADTW), which ameliorates the robustness of existing time-warping approaches, to synchronize the amateur recording with the template pitch curve. Furthermore, we propose a latent-mapping algorithm in the latent space to convert the amateur vocal tone to the professional one. Extensive experiments on both Chinese and English songs demonstrate the effectiveness of our methods in terms of both objective and subjective metrics.</p>
+        <p class="text-body">Singing voice beautifying (SVB) aims to correct pitch and rhythm while enhancing vocal quality, preserving lyrics and the singer's timbre. Existing methods suffer from limited correction scope, dependency on parallel data, difficulty in preserving the original singer's style, and inefficient inference. We propose SRF-SVB, a style-consistent model for SVB via rectified flow. To our knowledge, this is the first work to introduce rectified flow into the SVB task. We design a masked mel-spectrogram inpainting mechanism, where the model generates masked regions guided by spectral context and decoupled acoustic features including pitch, timbre, and content. During inference, the beautified singing is generated conditioned on the amateur spectral context, preserving the original singer's timbre characteristic and expressive patterns. Experiments show that SRF-SVB outperforms baseline methods in both objective and subjective metrics.</p>
     </section>
 
     <section>
         <h2 class="section-title">Model Architecture</h2>
         <div class="image-center">
-            <img src="images/MOS_details.png" alt="模型架构图">
+            <img src="images/model.png" alt="模型架构图">
         </div>
     </section>
 
     <section>
         <h2 class="section-title">Audio Samples</h2>
-        <p class="text-body">我们一共选择了12个音频样例进行展示，包含中英文和男女性，并且我们测试的音频都是模型之前未见过的！</p>
+        <p class="text-body">我们一共选择了12个音频样例进行展示，包含中英文和男女性，并且测试音频都是模型之前未见过的。</p>
         <h3 class="section-title">Chinese</h3>
         <p class="text-body">男声1:</p>
         
@@ -40,9 +40,9 @@
                     <tr>
                         <th class="col-short">Amateur</th>
                         <th class="col-short">Professional</th>
-                        <th class="col-long">模型1</th>
-                        <th class="col-long">模型2</th>
-                        <th class="col-long">模型3</th>
+                        <th class="col-long">DiffPitcher</th>
+                        <th class="col-long">NSVB</th>
+                        <th class="col-long">SRF-SVB</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -64,9 +64,9 @@
                     <tr>
                         <th class="col-short">Amateur</th>
                         <th class="col-short">Professional</th>
-                        <th class="col-long">模型1</th>
-                        <th class="col-long">模型2</th>
-                        <th class="col-long">模型3</th>
+                        <th class="col-long">DiffPitcher</th>
+                        <th class="col-long">NSVB</th>
+                        <th class="col-long">SRF-SVB</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -88,9 +88,9 @@
                     <tr>
                         <th class="col-short">Amateur</th>
                         <th class="col-short">Professional</th>
-                        <th class="col-long">模型1</th>
-                        <th class="col-long">模型2</th>
-                        <th class="col-long">模型3</th>
+                        <th class="col-long">DiffPitcher</th>
+                        <th class="col-long">NSVB</th>
+                        <th class="col-long">SRF-SVB</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -113,9 +113,9 @@
                     <tr>
                         <th class="col-short">Amateur</th>
                         <th class="col-short">Professional</th>
-                        <th class="col-long">模型1</th>
-                        <th class="col-long">模型2</th>
-                        <th class="col-long">模型3</th>
+                        <th class="col-long">DiffPitcher</th>
+                        <th class="col-long">NSVB</th>
+                        <th class="col-long">SRF-SVB</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -137,9 +137,9 @@
                     <tr>
                         <th class="col-short">Amateur</th>
                         <th class="col-short">Professional</th>
-                        <th class="col-long">模型1</th>
-                        <th class="col-long">模型2</th>
-                        <th class="col-long">模型3</th>
+                        <th class="col-long">DiffPitcher</th>
+                        <th class="col-long">NSVB</th>
+                        <th class="col-long">SRF-SVB</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -161,9 +161,9 @@
                     <tr>
                         <th class="col-short">Amateur</th>
                         <th class="col-short">Professional</th>
-                        <th class="col-long">模型1</th>
-                        <th class="col-long">模型2</th>
-                        <th class="col-long">模型3</th>
+                        <th class="col-long">DiffPitcher</th>
+                        <th class="col-long">NSVB</th>
+                        <th class="col-long">SRF-SVB</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -187,9 +187,9 @@
                     <tr>
                         <th class="col-short">Amateur</th>
                         <th class="col-short">Professional</th>
-                        <th class="col-long">模型1</th>
-                        <th class="col-long">模型2</th>
-                        <th class="col-long">模型3</th>
+                        <th class="col-long">DiffPitcher</th>
+                        <th class="col-long">NSVB</th>
+                        <th class="col-long">SRF-SVB</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -211,9 +211,9 @@
                     <tr>
                         <th class="col-short">Amateur</th>
                         <th class="col-short">Professional</th>
-                        <th class="col-long">模型1</th>
-                        <th class="col-long">模型2</th>
-                        <th class="col-long">模型3</th>
+                        <th class="col-long">DiffPitcher</th>
+                        <th class="col-long">NSVB</th>
+                        <th class="col-long">SRF-SVB</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -235,9 +235,9 @@
                     <tr>
                         <th class="col-short">Amateur</th>
                         <th class="col-short">Professional</th>
-                        <th class="col-long">模型1</th>
-                        <th class="col-long">模型2</th>
-                        <th class="col-long">模型3</th>
+                        <th class="col-long">DiffPitcher</th>
+                        <th class="col-long">NSVB</th>
+                        <th class="col-long">SRF-SVB</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -260,9 +260,9 @@
                     <tr>
                         <th class="col-short">Amateur</th>
                         <th class="col-short">Professional</th>
-                        <th class="col-long">模型1</th>
-                        <th class="col-long">模型2</th>
-                        <th class="col-long">模型3</th>
+                        <th class="col-long">DiffPitcher</th>
+                        <th class="col-long">NSVB</th>
+                        <th class="col-long">SRF-SVB</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -284,9 +284,9 @@
                     <tr>
                         <th class="col-short">Amateur</th>
                         <th class="col-short">Professional</th>
-                        <th class="col-long">模型1</th>
-                        <th class="col-long">模型2</th>
-                        <th class="col-long">模型3</th>
+                        <th class="col-long">DiffPitcher</th>
+                        <th class="col-long">NSVB</th>
+                        <th class="col-long">SRF-SVB</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -308,9 +308,9 @@
                     <tr>
                         <th class="col-short">Amateur</th>
                         <th class="col-short">Professional</th>
-                        <th class="col-long">模型1</th>
-                        <th class="col-long">模型2</th>
-                        <th class="col-long">模型3</th>
+                        <th class="col-long">DiffPitcher</th>
+                        <th class="col-long">NSVB</th>
+                        <th class="col-long">SRF-SVB</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -329,7 +329,7 @@
 </main>
 
 <footer>
-    <p>© 2026 MySVB | 基于 GitHub Pages 托管</p>
+    <p>© 2026 SRF-SVB | 基于 GitHub Pages 托管</p>
 </footer>
 
 <script src="js/script.js"></script>
